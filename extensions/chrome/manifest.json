@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+
+	"name": "Browsersnap",
+	"description": "Browsersnap allow you to report bug on compliente website.",
+	"version": "0.0.1",
+
+	"background": {
+		"scripts": ["app.js"],
+		"persistent": false
+	},
+
+	"browser_action": {
+		"default_title": "Report bug !"
+	},
+	
+	"permissions": [
+		"<all_urls>"
+	],
+
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["handler.js"]
+		}
+	]
+}

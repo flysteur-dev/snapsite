@@ -11,7 +11,7 @@
 	},
 
 	"browser_action": {
-		"default_title": "Report bug !"
+		"default_title": "Capture webpage to clipboard."
 	},
 	
 	"permissions": [

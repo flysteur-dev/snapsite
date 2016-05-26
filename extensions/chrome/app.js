@@ -2,15 +2,42 @@
 	EXTENSION APP
 */
 
-chrome.runtime.onMessage.addListener(
-  function(request, sender, reponse) {
- 	//Capture the visible part of the webpage
-	chrome.tabs.captureVisibleTab(sender.tab.windowId, {format: 'png'}, function(data) {
-		//Response to content script handler with picture as data url
-		reponse(data);
-	});
+var API = {
+	snap: function(windowId, callback) {
+		//Capture the visible part of the webpage
+		chrome.tabs.captureVisibleTab(windowId, {format: 'png'}, function(data) {
+			//Callback with picture as data url
+			callback(data);
+		});
+	}
+}
 
-	//Async response
-	return true;
-  }
+/*
+   HANDLERS
+*/
+
+//Catch message from content script
+chrome.runtime.onMessage.addListener(
+	function(request, sender, callback) {
+
+		//Response to content script handler with picture as data url
+		API.snap(sender.tab.windowId, function(data) {
+			callback(data);
+		});
+
+		//Async
+		return true;
+	}
+);
+
+//Catch browser action click
+chrome.browserAction.onClicked.addListener(
+	function(sender) {
+		API.snap(sender.windowId, function(data) {
+			chrome.browserAction.setPopup({
+				//TODO: Customize output (clipboard, download) with settings
+				popup: "actions/clipboard.html"
+			});
+		});
+	}
 );

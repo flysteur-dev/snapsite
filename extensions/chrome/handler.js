@@ -18,3 +18,23 @@ document.addEventListener("snap", function(data) {
 		window.postMessage({snap: picture}, "*");
 	});
 });
+
+//Catch event send through popup
+chrome.runtime.onMessage.addListener(function (msg, sender, response) {
+	console.log("requested action from popup", msg);
+	if (msg.from === 'popup') {
+		switch (msg.action) {
+			case "clipboard":
+				chrome.runtime.sendMessage({}, function(picture) {
+					response({snap: picture});
+				});
+				break;
+			default:
+				console.error("Unknown popup action", msg);
+				break;
+		}
+	}
+
+	//Async
+	return true;
+});

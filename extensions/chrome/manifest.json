@@ -1,9 +1,15 @@
 {
 	"manifest_version": 2,
 
-	"name": "Browsersnap",
-	"description": "Browsersnap allow you to report bug on compliente website.",
+	"name": "SnapSite",
+	"description": "SnapSite is the simple way to take website capture in your clipboard. It will also help developer to handle customer bug.",
 	"version": "0.0.1",
+
+	"icons": {
+		"16":  "logo.png",
+		"48":  "logo.png",
+		"128": "logo.png"
+	},
 
 	"background": {
 		"scripts": ["app.js"],
@@ -11,7 +17,8 @@
 	},
 
 	"browser_action": {
-		"default_title": "Capture webpage to clipboard."
+		"default_icon":  "icon.png",
+		"default_title": "Capture to clipboard."
 	},
 	
 	"permissions": [
@@ -21,7 +28,8 @@
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
-			"js": ["handler.js"]
+			"js":      ["handler.js"],
+			"run_at":  "document_end"
 		}
 	]
 }

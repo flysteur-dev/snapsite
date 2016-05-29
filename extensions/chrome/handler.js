@@ -1,6 +1,7 @@
 /* 
 	CONTENT SCRIPT HANDLER 
 */
+
 var manifest = chrome.runtime.getManifest();
 var config   = {
 	__WEBUG_AVAILABLE: true,
@@ -21,23 +22,4 @@ document.addEventListener("snap", function(data) {
 			platform:  config.__WEBUG_PLATFORM
 		}, "*");
 	});
-});
-
-//Catch event send through popup
-chrome.runtime.onMessage.addListener(function (msg, sender, response) {
-	if (msg.from === 'popup') {
-		switch (msg.action) {
-			case "clipboard":
-				chrome.runtime.sendMessage({}, function(picture) {
-					response({snap: picture});
-				});
-				break;
-			default:
-				console.error("Unknown popup action", msg);
-				break;
-		}
-	}
-
-	//Async
-	return true;
 });

@@ -33,9 +33,9 @@ chrome.runtime.onMessage.addListener(
 //Catch browser action click
 chrome.browserAction.onClicked.addListener(
 	function(sender) {
-		//TODO: Customize output (clipboard, download) with settings
-		chrome.browserAction.setPopup({
-			popup: "actions/clipboard.html?tab=" + sender.windowId
-		});
+		//TODO: Later customize output (clipboard, download) with settings
+		// chrome.browserAction.setPopup({
+		// 	popup: "actions/clipboard.html"
+		// });
 	}
 );

@@ -14,17 +14,18 @@ function selectText(element) {
 	}
 }
 
-var app      = chrome.extension.getBackgroundPage();
-var windowId = window.location.href.split("?tab=")[1];
+var app = chrome.extension.getBackgroundPage();
 
-//Capture
-app.API.snap(parseInt(windowId), function(data) {
-	var container        = document.createElement("img");
-		container.src    = data;
-		container.width  = "1px";
-		container.height = "1px";
+chrome.windows.getCurrent(function(window) {
+	//Capture
+	app.API.snap(parseInt(window.id), function(data) {
+		var container        = document.createElement("img");
+			container.src    = data;
+			container.width  = "1px";
+			container.height = "1px";
 
-	var copy = document.getElementById("tocopy");
-		copy.appendChild(container);
-	selectText(copy);
+		var copy = document.getElementById("tocopy");
+			copy.appendChild(container);
+		selectText(copy);
+	});
 });

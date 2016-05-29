@@ -14,7 +14,7 @@
 
 	"background": {
 		"scripts": ["app.js"],
-		"persistent": false
+		"persistent": true
 	},
 
 	"browser_action": {

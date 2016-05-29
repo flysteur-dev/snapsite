@@ -1,10 +1,11 @@
 {
 	"manifest_version": 2,
 
-	"name": "SnapSite",
-	"description": "SnapSite is the simple way to take website capture in your clipboard. It will also help developer to handle customer bug.",
+	"name": "__MSG_app_name__",
+	"description": "__MSG_app_description__",
 	"version": "0.0.1",
 
+	"default_locale": "en",
 	"icons": {
 		"16":  "logo.png",
 		"48":  "logo.png",
@@ -18,7 +19,8 @@
 
 	"browser_action": {
 		"default_icon":  "icon.png",
-		"default_title": "Capture to clipboard."
+		"default_title": "__MSG_app_actions_clipboard__",
+		"default_popup": "actions/clipboard.html"
 	},
 	
 	"permissions": [

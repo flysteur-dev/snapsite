@@ -1,0 +1,11 @@
+{
+	"app_name": {
+		"message": "SnapSite"
+	},
+	"app_description": {
+		"message": "SnapSite is the simple way to take website capture in your clipboard. It will also help developer to handle customer bug."
+	},
+	"app_actions_clipboard": {
+		"message": "Capture to clipboard."
+	}
+}

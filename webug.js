@@ -1,6 +1,6 @@
 /*
 
-WEBUG LIBRARY
+SNAPSITE LIBRARY
 VERSION 0.1
 
 */
@@ -25,16 +25,15 @@ var Webug = function (callback, options) {
 		if (event.source != window) return;
 
 		//Check availability of the extension
-		if (event.data.__WEBUG_AVAILABLE  && 
-			event.data.__WEBUG_AVAILABLE == true) {
-			console.log("Webug seems to be ready with extension");
+		if (event.data.__SNAPSITE_AVAILABLE  &&
+			event.data.__SNAPSITE_AVAILABLE == true) {
 			hasExtension = true;
 			start();
 		}
 
 		//Check if message is sent through the extension
 		if (event.data.snap) {
-			//Take snap through extension
+			//Take snap
 			callback(event.data);
 		}
 	}, false);

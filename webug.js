@@ -61,14 +61,13 @@ var Webug = function (callback, options) {
 
 			//Ready to catch event
 			var catcher = document.getElementById(options.selector);
-			    catcher.addEventListener('click', function() {
+				catcher.addEventListener('click', function() {
 
-			    if (hasExtension === true) {
+				if (hasExtension === true) {
 					//Dispatch event
 					//Will be catched by extension
-		    		var event = document.createEvent('Event');
-				    	event.initEvent('snap');
-				    document.dispatchEvent(event);
+					var event = new Event('snap');
+					document.dispatchEvent(event);
 				} else {
 					//Extension is not ready, install extension first.
 					fallback();

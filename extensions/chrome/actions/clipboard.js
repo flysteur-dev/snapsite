@@ -29,3 +29,11 @@ chrome.windows.getCurrent(function(window) {
 		selectText(copy);
 	});
 });
+
+document.addEventListener("keydown", function(e) {
+	//CTRL + C (67) is pressed
+	if (e.ctrlKey && e.keyCode === 67) {
+		var cmd = document.getElementById("cmd").getElementsByTagName("img")[0];
+			cmd.src = "../assets/ok.png";
+	}
+}, false);

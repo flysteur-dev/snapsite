@@ -1,0 +1,43 @@
+{
+	"manifest_version": 2,
+
+	"name": "SnapSite",
+	"description": "SnapSite",
+	"version": "0.0.1",
+
+	"icons": {
+		"16":  "assets/logo.png",
+		"48":  "assets/logo.png",
+		"128": "assets/logo.png"
+	},
+
+	"background": {
+		"scripts": ["app.js"]
+	},
+
+	"browser_action": {
+		"default_icon":  "assets/icon.png",
+		"default_title": "toto",
+		"default_popup": "actions/clipboard.html"
+	},	
+
+	"permissions": [
+		"<all_urls>"
+	],
+
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js":      ["handler.js"],
+			"run_at":  "document_end"
+		}
+	],
+
+	"applications": {
+		"gecko": {
+			"id": "snapsite",
+			"strict_min_version": "47.0"
+		}
+	}
+
+}

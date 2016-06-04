@@ -6,6 +6,6 @@
 		"message": "SnapSite est la façon la plus rapide de copier une capture d'écran dans le presse papier, il aide également les développeurs à comprendre les bugs clients. (plus d'informations sur https://snapsite.live)"
 	},
 	"app_actions_clipboard": {
-		"message": "Copier la capture d'écran dans le presse papier."
+		"message": "Copier la capture d'écran."
 	}
 }

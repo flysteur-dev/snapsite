@@ -33,5 +33,7 @@
 			"js":      ["handler.js"],
 			"run_at":  "document_end"
 		}
-	]
+	],
+
+	"minimum_chrome_version": "20"
 }

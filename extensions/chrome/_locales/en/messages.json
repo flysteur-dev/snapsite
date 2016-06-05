@@ -3,9 +3,9 @@
 		"message": "SnapSite"
 	},
 	"app_description": {
-		"message": "SnapSite is the simplest way to take website capture in your clipboard. It will also help developers to handle customers bugs."
+		"message": "Easiest way to send a screenshot to your clipboard."
 	},
 	"app_actions_clipboard": {
-		"message": "Capture to clipboard."
+		"message": "Screenshot to clipboard."
 	}
 }

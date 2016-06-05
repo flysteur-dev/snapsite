@@ -7,7 +7,7 @@ VERSION 0.1
 
 "use strict";
 
-var Webug = function (callback, options) {
+var SnapSite = function (callback, options) {
 
 	//Library/Extension status
 	var isStarted    = false;

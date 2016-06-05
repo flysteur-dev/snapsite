@@ -5,11 +5,11 @@ Useful to add a bug tracking tool inside your webpage during your internal devel
 
 
 Browsers compatibility:
-Chrome  >= 20
-Firefox >= 47
-Opera  (soon)
-Safari (soon)
-Edge   (soon)
+- Chrome  >= 20
+- Firefox >= 47
+- Opera  (soon)
+- Safari (soon)
+- Edge   (soon)
 
 
 Features:
@@ -17,5 +17,5 @@ Features:
 - Useragent cannot be spoofed
 
 
-CHECK SUM
-Chrome app : 87203a6c4e8e92202ffd65eda3cf5043
+CHECK SUM:
+- Chrome app : 87203a6c4e8e92202ffd65eda3cf5043

@@ -1,0 +1,11 @@
+{
+	"app_name": {
+		"message": "SnapSite"
+	},
+	"app_description": {
+		"message": "Capturez rapidement votre écran dans le presse papier."
+	},
+	"app_actions_clipboard": {
+		"message": "Copier la capture d'écran."
+	}
+}

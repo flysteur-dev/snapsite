@@ -1,17 +1,56 @@
 <html>
-	<head></head>
-	<body style="background-color:red">
+	<head>
+		<meta charset="utf-8">
+		<title>Try SnapSite</title>
+		<style>
+			body {margin:0px;padding:0px;background-color: #f0ecea;}
+			#content {height:100%;display:flex;justify-content: center;}
+			#content ul {align-self: center;margin:0px;padding:0px;width:50%;list-style-type: none;}
+			#content li {width:49%;display:inline-block;margin-bottom: 5px;color:white;padding:10px;box-sizing: border-box;}
+			#feedback {
+				position: fixed;
+				bottom: 30px;
+				right: 30px;
+				box-shadow: 0px 4px 10px 1px gray;
+				background-color: #03A9F4;
+				color: white;
+				line-height: 36px;
+				text-align: center;
+				cursor: pointer;
+				width: 100px;
+				height: 36px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<ul>
+				<li style="background-color:#ff3a6a;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas interdum risus nec sodales maximus. Nam eget risus sed tortor mollis faucibus. Pellentesque hendrerit ligula eu augue tincidunt, eu dignissim magna ultrices. Sed tristique finibus neque id cursus. Praesent malesuada a nulla eget tristique. Donec ullamcorper purus magna, eget elementum velit elementum sit amet. Donec sed lorem lacinia, laoreet mi eu, condimentum diam. Nunc eu varius nibh. Quisque gravida congue eros.</li>		
+				<li style="background-color:#ff9646;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas interdum risus nec sodales maximus. Nam eget risus sed tortor mollis faucibus. Pellentesque hendrerit ligula eu augue tincidunt, eu dignissim magna ultrices. Sed tristique finibus neque id cursus. Praesent malesuada a nulla eget tristique. Donec ullamcorper purus magna, eget elementum velit elementum sit amet. Donec sed lorem lacinia, laoreet mi eu, condimentum diam. Nunc eu varius nibh. Quisque gravida congue eros.</li>
+				<li style="background-color:#b1c953;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas interdum risus nec sodales maximus. Nam eget risus sed tortor mollis faucibus. Pellentesque hendrerit ligula eu augue tincidunt, eu dignissim magna ultrices. Sed tristique finibus neque id cursus. Praesent malesuada a nulla eget tristique. Donec ullamcorper purus magna, eget elementum velit elementum sit amet. Donec sed lorem lacinia, laoreet mi eu, condimentum diam. Nunc eu varius nibh. Quisque gravida congue eros.</li>
+				<li style="background-color:#38acb5;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas interdum risus nec sodales maximus. Nam eget risus sed tortor mollis faucibus. Pellentesque hendrerit ligula eu augue tincidunt, eu dignissim magna ultrices. Sed tristique finibus neque id cursus. Praesent malesuada a nulla eget tristique. Donec ullamcorper purus magna, eget elementum velit elementum sit amet. Donec sed lorem lacinia, laoreet mi eu, condimentum diam. Nunc eu varius nibh. Quisque gravida congue eros.</li>
+			</ul>
+			<div id="feedback">Try me</div>
+		</div>
+
 		<script src="snapsite.js"></script>
 		<script type="text/javascript">
 			SnapSite(function(data) {
 				//Do what you want..
 				//Send it to your favorite bug tracker tool
 				
-				//Snap as data url
-				console.log(data.snap);
+				//Log screenshot as data url
+				//console.log(data.snap);
 
 				//Browser User-Agent
 				console.log(data.platform);
+
+				//Open screenshot in new tab
+				window.open(data.snap, "_blank");
+			}, {}, function(err) {
+				//No extension found, redirect to install page
+				console.error("Please install extension first.");
+				window.location.href = "http://snapsite.live/install?r="+window.location.href;
 			});
 		</script>
 	</body>

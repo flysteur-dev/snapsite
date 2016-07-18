@@ -7,8 +7,8 @@ Useful to add a bug tracking tool inside your webpage during your internal devel
 ### Browsers compatibility:
 - Chrome  >= 20
 - Firefox >= 47
+- Safari  >= 8
 - Opera  (soon)
-- Safari (soon)
 - Edge   (soon)
 
 ### Features:
@@ -19,6 +19,7 @@ Useful to add a bug tracking tool inside your webpage during your internal devel
 ### Stores:
 - Chrome  : [link](https://chrome.google.com/webstore/detail/snapsite/fkockbmpmgpelkjfnelaifdniigigmkp)
 - Firefox : [link](https://addons.mozilla.org/fr/firefox/addon/snapsite/)
+- Safari  : (packaged binary) [link](http://snapsite.live/download/safari/snapsite.safariextz#0.1)
 
 ### Example:
  - Start server

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Alexandre OCTAU</string>
+	<key>Builder Version</key>
+	<string>11601.2.7.2</string>
+	<key>CFBundleDisplayName</key>
+	<string>snapsite</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.snapsite</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.0.1</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Global Page</key>
+		<string>app.html</string>
+		<key>Popovers</key>
+		<array>
+			<dict>
+				<key>Filename</key>
+				<string>actions/clipboard.html</string>
+				<key>Height</key>
+				<integer>30</integer>
+				<key>Identifier</key>
+				<string>popover</string>
+				<key>Width</key>
+				<integer>110</integer>
+			</dict>
+		</array>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Command</key>
+				<string>action-clipboard</string>
+				<key>Identifier</key>
+				<string>action-clipboard</string>
+				<key>Image</key>
+				<string>assets/logo.png</string>
+				<key>Include By Default</key>
+				<true/>
+				<key>Label</key>
+				<string>snapsite</string>
+				<key>Popover</key>
+				<string>popover</string>
+				<key>Tool Tip</key>
+				<string>Capture to clipboard.</string>
+			</dict>
+		</array>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>End</key>
+			<array>
+				<string>handler.js</string>
+			</array>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>Easiest way to send a screenshot to your clipboard.</string>
+	<key>DeveloperIdentifier</key>
+	<string>0000000000</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+	<key>Website</key>
+	<string>http://snapsite.live</string>
+</dict>
+</plist>

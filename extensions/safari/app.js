@@ -19,7 +19,7 @@ var API = {
 */
 
 //Catch message from content script
-safari.application.activeBrowserWindow.activeTab.addEventListener("message", function(data) {
+safari.application.addEventListener("message", function(data) {
 	if (data.message !== "requestsnap") return;
 	
 	//Response to content script handler with picture as data url

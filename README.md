@@ -26,6 +26,8 @@ Useful to add a bug tracking tool inside your webpage during your internal devel
     - python -m SimpleHTTPServer
  - Go to 127.0.0.1:8080/example.html
  - Click on "Try me"
+ - If the port is already used, try again with an extra parameter 
+    - python -m SimpleHTTPServer 8180
 
 ### Documentation:
 http://snapsite.live

@@ -35,6 +35,25 @@
 
 		<script src="snapsite.js"></script>
 		<script type="text/javascript">
+			function dataUrlToBlob(dataUrl){
+				const binary = atob(dataUrl.split(',')[1]);
+				const array = [];
+				for(let i = 0; i < binary.length; i++) {
+					array.push(binary.charCodeAt(i));
+				}
+				return new Blob([new Uint8Array(array)], {type: 'image/png'});
+			}
+
+			function save(url){
+				const anchor = document.createElement('a');
+				anchor.href = url;
+				anchor.style.display = 'none';
+				anchor.target = '_blank';
+				document.body.appendChild(anchor);
+				anchor.click();
+				document.body.removeChild(anchor);
+			}
+
 			SnapSite(function(data) {
 				//Do what you want..
 				//Send it to your favorite bug tracker tool
@@ -45,8 +64,15 @@
 				//Browser User-Agent
 				console.log(data.platform);
 
-				//Open screenshot in new tab
-				window.open(data.snap, "_blank");
+				// Open screenshot in new tab
+				// Create blob from data.snap because data-urls in top level are blocked
+				// https://blog.mozilla.org/security/2017/11/27/blocking-top-level-navigations-data-urls-firefox-59/
+				const blob = dataUrlToBlob(data.snap);
+
+				// create url and open it
+				save(URL.createObjectURL(blob));
+				delete blob;
+
 			}, {}, function(err) {
 				//No extension found, redirect to install page
 				console.error("Please install extension first.");

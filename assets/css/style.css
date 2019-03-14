@@ -1,0 +1,189 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+.hide {
+  display: none !important; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif; }
+
+header {
+  display: flex;
+  justify-content: space-around;
+  height: 80px;
+  background-color: #ed3b66;
+  line-height: 80px; }
+  header .logo img {
+    height: 60px;
+    margin-top: 10px; }
+  header .links {
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none; }
+    header .links a {
+      text-decoration: none; }
+    header .links li {
+      width: 100px;
+      text-align: center;
+      color: white; }
+      header .links li:hover {
+        background-color: white;
+        color: #ed3b66;
+        cursor: pointer; }
+
+#developers {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px; }
+  #developers > div {
+    width: 50%;
+    margin: auto; }
+    @media (max-width: 768px) {
+      #developers > div {
+        width: 80%; } }
+    #developers > div.note {
+      margin-top: 50px;
+      padding: 20px;
+      text-align: center;
+      border: 2px solid #ed3b66;
+      border-radius: 5px;
+      color: grey; }
+      #developers > div.note p {
+        margin: 0px;
+        font-size: 17px; }
+    #developers > div.download {
+      height: 100px;
+      margin: auto; }
+      #developers > div.download .get {
+        text-decoration: none;
+        cursor: pointer; }
+        #developers > div.download .get div {
+          background-color: #ed3b66;
+          border-radius: 5px;
+          color: white;
+          padding: 10px; }
+        #developers > div.download .get .right {
+          float: right; }
+    #developers > div.browser ul {
+      margin: 0px;
+      padding: 0px;
+      list-style-type: none; }
+      #developers > div.browser ul li {
+        display: inline; }
+        #developers > div.browser ul li a {
+          text-decoration: none; }
+        #developers > div.browser ul li.inactive img {
+          -webkit-filter: grayscale(100%);
+          filter: grayscale(100%); }
+    #developers > div pre {
+      border: 1px solid rgba(34, 34, 34, 0.2);
+      border-radius: 4px;
+      color: #222;
+      font-size: 14px;
+      padding: 5px 8px;
+      margin: 0 0 20px;
+      white-space: pre;
+      word-wrap: normal;
+      overflow-x: auto;
+      line-height: 24px;
+      background: rgba(34, 34, 34, 0.03);
+      font-weight: 100; }
+    #developers > div p {
+      font-size: 11px;
+      color: gray; }
+
+#install .success {
+  margin: 50px;
+  padding: 20px;
+  text-align: center;
+  background-color: #28b028;
+  border: 2px solid #1d851d;
+  border-radius: 5px;
+  color: white; }
+  #install .success p {
+    margin: 0px; }
+#install .note {
+  margin: 50px;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #ed3b66;
+  border-radius: 5px;
+  color: grey; }
+  #install .note p {
+    margin: 0px; }
+#install ul {
+  display: flex;
+  padding: 0px;
+  text-align: center; }
+  #install ul li {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 300px;
+    border: 1px solid #e3e3e3;
+    list-style-type: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 150ms linear; }
+    #install ul li .require {
+      display: none;
+      justify-content: center;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      background-color: #ededed;
+      border-right: 1px solid #e3e3e3;
+      border-bottom: 1px solid #e3e3e3; }
+      #install ul li .require p {
+        margin: 0;
+        color: gray; }
+        #install ul li .require p:first-child {
+          font-size: 10px; }
+        #install ul li .require p:last-child {
+          font-size: 36px;
+          font-weight: bold; }
+    #install ul li .install {
+      display: none;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0; }
+      #install ul li .install div {
+        align-self: center;
+        width: 200px;
+        background-color: #ed3b66;
+        border-radius: 5px;
+        color: white;
+        font-size: 30px;
+        padding: 10px; }
+    #install ul li img {
+      height: 300px; }
+    #install ul li.active {
+      order: 4 !important; }
+      #install ul li.active .install div:last-child {
+        display: none; }
+    #install ul li:not(.active):hover.available .install div:first-child {
+      display: none; }
+    #install ul li:hover, #install ul li.active {
+      flex: 3; }
+      #install ul li:hover .install, #install ul li:hover .require, #install ul li.active .install, #install ul li.active .require {
+        display: flex; }
+    #install ul li:not(.available) {
+      background-color: #e3e3e3; }
+      #install ul li:not(.available) img {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%); }
+
+/*# sourceMappingURL=style.css.map */

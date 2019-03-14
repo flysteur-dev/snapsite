@@ -1,0 +1,286 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+
+//Utility
+.hide { display:none !important; }
+
+html, body {
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+header {
+	display:flex;
+	justify-content: space-around;
+
+	height:80px;
+	background-color:#ed3b66;
+	line-height:80px;
+
+	.logo img {
+		height:60px;
+		margin-top:10px;
+	}
+
+	.links {
+		display:flex;
+
+		padding:0px;
+		margin:0px;
+		list-style-type: none;
+
+		a { text-decoration: none; }
+
+		li {
+			width:100px;
+			text-align:center;
+			color:white;
+			
+			&:hover {
+				background-color: white;
+				color:#ed3b66;
+				cursor:pointer;
+			}	
+		}
+	}
+}
+
+#developers {
+	display:flex;
+	justify-content:center;
+	flex-direction:column;
+	margin-bottom: 20px;
+
+
+	> div {
+		width:50%;
+		margin: auto;
+
+		@media (max-width: 768px) {
+			width:80%;
+		}
+
+		&.note {
+			margin-top:50px;
+			padding: 20px;
+			text-align: center;
+			border: 2px solid #ed3b66;
+			border-radius: 5px;
+			color:grey;
+
+			p { 
+				margin:0px;
+				font-size: 17px;
+			}
+		}
+
+		&.download {
+			height:100px;
+			margin:auto;
+
+			.get {
+				text-decoration: none;
+				cursor:pointer;
+
+				div {
+					background-color: #ed3b66;
+					border-radius: 5px;
+					color: white;
+					padding: 10px;
+				}
+
+				.right {
+					float:right;
+				}
+			}
+		}
+
+		&.browser {
+			ul {
+				margin:0px;
+				padding:0px;
+				list-style-type: none;
+
+				li {
+					display:inline;
+
+					a {
+						text-decoration: none;
+					}
+
+					&.inactive {
+						img {
+							-webkit-filter: grayscale(100%);
+							filter: grayscale(100%);
+						}
+					}
+				}
+			}
+		}
+
+		pre {
+			border: 1px solid rgba(34,34,34,0.2);
+			border-radius: 4px;
+			color: #222;
+			font-size: 14px;
+			padding: 5px 8px;
+			margin: 0 0 20px;
+			white-space: pre;
+			word-wrap: normal;
+			overflow-x: auto;
+			line-height: 24px;
+			background: rgba(34,34,34,0.03);
+			font-weight: 100;
+		}
+
+		p {
+			font-size: 11px;
+			color:gray;
+		}
+
+	}}
+
+#install {
+
+	.success {
+		margin: 50px;
+		padding: 20px;
+		text-align: center;
+		background-color: #28b028;
+		border: 2px solid #1d851d;
+		border-radius: 5px;
+		color:white;
+
+		p { margin:0px; }
+	}
+
+	.note {
+		margin: 50px;
+		padding: 20px;
+		text-align: center;
+		border: 2px solid #ed3b66;
+		border-radius: 5px;
+		color:grey;
+
+		p { margin:0px; }
+	}
+
+	ul {
+		display:flex;
+
+		padding:0px;
+		text-align: center;
+
+		li {
+			display: flex;
+			flex:1;
+			justify-content: center;
+			flex-direction: column;
+
+			position:relative;
+			overflow: hidden;
+			width:200px;
+			height:300px;
+			border:1px solid #e3e3e3;
+			list-style-type: none;
+			box-sizing: border-box;
+			cursor:pointer;	
+
+			transition: all 150ms linear;
+
+			.require {
+				display:none;
+				justify-content:center;
+				flex-direction: column;
+
+				position:absolute;
+				top:0;
+
+				width:100px;
+				height:100px;
+				background-color:#ededed;
+				border-right:1px solid #e3e3e3;
+				border-bottom:1px solid #e3e3e3;
+
+				p {
+					margin:0;
+					color:gray;
+
+					&:first-child {
+						font-size: 10px;
+					}
+					&:last-child {
+						font-size: 36px;
+						font-weight: bold;
+					}
+				}
+			}
+
+			.install {
+				display: none;
+				justify-content: center;
+
+				height:100%;
+				width:100%;
+				position:absolute;
+				top:0;
+
+				div {
+					align-self:center;
+
+					width: 200px;
+					background-color: #ed3b66;
+					border-radius: 5px;
+					color: white;
+					font-size: 30px;
+					padding: 10px;
+				}
+			}
+
+			img { height:300px; }
+
+			&.active {
+				//Keep compatible app centred
+				order:4 !important;
+
+				.install {
+					div:last-child {
+						display:none;
+					}
+				}
+			}
+
+			&:not(.active) {
+				&:hover {
+					&.available {
+						.install {
+							div:first-child {
+								display:none;
+							}
+						}
+					}
+				}
+			}
+
+			&:hover, &.active {
+				flex:3;
+
+				.install, .require {
+					display: flex;
+				}
+			}
+
+			&:not(.available) {
+				background-color: #e3e3e3;
+
+				img {
+					-webkit-filter: grayscale(100%);
+					filter: grayscale(100%);
+				}
+			}
+		}
+	}
+}

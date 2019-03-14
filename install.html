@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SnapSite - Get instant website feedbacks</title>
+		<meta name="description" content="The easiest way to get website internal / customers feedbacks" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/png" href="assets/favicon.png" />
+		<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+
+		<!-- src: assets/css/style.scss -->
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+		<!-- chrome store link -->
+		<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/fkockbmpmgpelkjfnelaifdniigigmkp">
+
+		<!-- library -->
+		<script type="text/javascript" src="assets/js/platform.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<div class="logo"><img src="assets/logo.png"></div>
+
+			<ul class="links">
+				<a href="https://snapsite.live"><li>Developer ?</li></a>
+			</ul>
+
+			<a href="https://github.com/flysteur-dev/snapsite">
+				<img style="position:absolute;top:0;right:0;border:0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+			</a>
+		</header>
+
+		<div id="howto"></div>
+		<div id="developers"></div>
+		<div id="install">
+			<div class="success hide">
+				<p>Thank you, you will be now redirected to your website.</p>
+			</div>
+			<div class="note">
+				<p>A browser extension is required to make feedback.</p>
+				<p>Please "install" the extension below, then click on "Add extension" or "Open" the downloaded file.</p>
+			</div>
+			<ul class="browser-list">
+				<li class="available browser-safari" style="order:1">
+					<center><img src="assets/pictures/safari_512.png" /></center>
+					<div class="require">
+						<p>(Safari)</p>
+						<p>&ge; 8</p>
+					</div>
+					<div class="install">
+						<div>INSTALL</div>
+						<div>Please come back with Safari</div>
+					</div>
+				</li>
+				<li class="available browser-firefox" style="order:2">
+					<center><img src="assets/pictures/firefox_512.png" /></center>
+					<div class="require">
+						<p>(Firefox)</p>
+						<p>&ge; 47</p>
+					</div>
+					<div class="install">
+						<div>INSTALL</div>
+						<div>Please come back with Firefox</div>
+					</div>
+				</li>
+				<li class="available browser-chrome" style="order:3">
+					<center><img src="assets/pictures/chrome_512.png" /></center>
+					<div class="require">
+						<p>(Chrome)</p>
+						<p>&ge; 22</p>
+					</div>
+					<div class="install">
+						<div>INSTALL</div>
+						<div>Please come back with Chrome</div>
+					</div>
+				</li>
+				<li style="order:4">
+					<center><img src="assets/pictures/opera_512.png" /></center>
+					<div class="require">
+						<p>(Opera)</p>
+						<p></p>
+					</div>
+					<div class="install">
+						<div>SOON</div>
+					</div>
+				</li>
+				<li style="order:5">
+					<center><img src="assets/pictures/edge_512.png" /></center>
+					<div class="require">
+						<p>(IE Edge)</p>
+						<p></p>
+					</div>
+					<div class="install">
+						<div>SOON</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<script type="text/javascript">
+			//Redirection is provided
+			var redirect = window.location.href.split("=")[1] || false;
+
+			//Platform detection
+			switch(platform.name) {
+				case "Chrome":
+					var app = document.getElementsByClassName("browser-chrome")[0];
+					app.classList.add("active");
+					break;
+				case "Firefox":
+					var app = document.getElementsByClassName("browser-firefox")[0];
+					app.classList.add("active");
+					break;
+				case "Safari":
+					var app = document.getElementsByClassName("browser-safari")[0];
+					app.classList.add("active");
+					break;
+				default:
+					console.warn("Unable to detect platform", platform);
+					break;
+			}
+
+			//Installation for chrome browser
+			var chromeapp = document.getElementsByClassName("browser-chrome")[0];
+				chromeapp.addEventListener('click', function() {
+
+					//Check revision
+					if(platform.name == "Chrome" && parseInt(platform.version) >= 22) {
+						//Launch install
+						chrome.webstore.install("", function() {
+							//Hide content
+							var note = document.getElementsByClassName("note")[0];
+							note.classList.add("hide");
+							var browsers = document.getElementsByClassName("browser-list")[0];
+							browsers.classList.add("hide");
+
+							var success = document.getElementsByClassName("success")[0];
+							success.innerHTML = "<p>Thank you, you will be now redirected to your website.</p>";
+							success.classList.remove("hide");
+
+							if (redirect) {
+								//Redirect to website
+								setTimeout(function(){ window.location.href = redirect; }, 2000);
+							}
+						}, function() {
+							console.error("Unable to install app");
+						});
+					} else {
+						alert("Please come back with chrome. version >=22");
+					}
+				}, false);
+
+			//Installation for firefox browser
+			var firefoxapp = document.getElementsByClassName("browser-firefox")[0];
+				firefoxapp.addEventListener('click', function() {
+
+					//Check revision
+					if(platform.name == "Firefox" && parseInt(platform.version) >= 47) {
+						var xpi = {
+							'SnapSite': {
+								URL :    'https://addons.mozilla.org/firefox/downloads/file/451206/snapsite-0.0.3-fx+an.xpi',
+								IconURL: 'http://snapsite.live/assets/logo_small.png',
+								Hash:    'sha1:3066c95aca54bc10db6f82d0d5bec646b1e534b6'
+							}
+						};
+						InstallTrigger.install(xpi, function() {});
+
+
+						//Hide content
+						var note = document.getElementsByClassName("note")[0];
+						note.classList.add("hide");
+						var browsers = document.getElementsByClassName("browser-list")[0];
+						browsers.classList.add("hide");
+
+						//No callback yet :(
+						var success = document.getElementsByClassName("success")[0];
+						success.innerHTML = '\
+							<p>Thank you !</p> \
+							<p>Please <b>"ALLOW"</b> and <b>"INSTALL"</b> the browser extension.</p> \
+							<p>Then <b><a href='+redirect+'>GO BACK TO THE WEBSITE</a></b></p> \
+						';
+						success.classList.remove("hide");
+					} else {
+						alert("Please come back with firefox. version >= 47");
+					}
+				}, false);
+
+			//Installation for safari browser
+			var safariapp = document.getElementsByClassName("browser-safari")[0];
+				safariapp.addEventListener('click', function() {
+
+					//Check revision
+					if(platform.name == "Safari" && parseInt(platform.version) >= 8) {
+						//Download the binary file
+						window.location.href = "/download/safari/snapsite.safariextz";
+
+
+						//Hide content
+						var note = document.getElementsByClassName("note")[0];
+						note.classList.add("hide");
+						var browsers = document.getElementsByClassName("browser-list")[0];
+						browsers.classList.add("hide");
+
+						//No callback yet :(
+						var success = document.getElementsByClassName("success")[0];
+						success.innerHTML = '\
+							<p>Thank you !</p> \
+							<p>Please <b>"OPEN"</b> the downloaded file and <b>"TRUST"</b> it.</p> \
+							<p>Then <b><a href='+redirect+'>GO BACK TO THE WEBSITE</a></b></p> \
+						';
+						success.classList.remove("hide");
+					} else {
+						alert("Please come back with safari. version >= 8");
+					}
+				}, false);
+		</script>
+	</body>
+</html>

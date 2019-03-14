@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SnapSite - Get instant website feedbacks</title>
+		<meta name="description" content="The easiest way to get website internal / customers feedbacks" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/png" href="assets/favicon.png" />
+		<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+
+		<!-- src: assets/css/style.scss -->
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+		<!-- library -->
+		<script type="text/javascript" src="assets/js/platform.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<div class="logo"><img src="assets/logo.png"></div>
+
+			<ul class="links">
+			</ul>
+
+			<a href="https://github.com/flysteur-dev/snapsite">
+				<img style="position:absolute;top:0;right:0;border:0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+			</a>
+		</header>
+
+		<div id="developers">
+			<div class="note">
+				<p>Get instant feedbacks for your website.</p>
+				<p>You will need a browser extension to capture the current webpage.</p>
+			</div>
+
+			<div class="download">
+
+				<h3>Download</h3>
+				<a href="https://raw.githubusercontent.com/flysteur-dev/snapsite/master/snapsite.js" class="get">
+					<div>Snapsite.js (1k) <span class="right">(v0.1)</span></div>
+				</a>
+			</div>
+
+			<div class="browser">
+				<h3>Browser extension</h3>
+				<ul>
+					<li>
+						<a href="https://chrome.google.com/webstore/detail/snapsite/fkockbmpmgpelkjfnelaifdniigigmkp" target="_blank">
+							<img height="32px" width="32px" src="assets/pictures/chrome_32.png"/>
+						</a>
+					</li>
+					<li>
+						<a href="https://addons.mozilla.org/fr/firefox/addon/snapsite/" target="_blank">
+							<img height="32px" width="32px" src="assets/pictures/firefox_32.png"/>
+						</a>
+					</li>
+					<li title="self packaged binary">
+						<a href="build/safari/snapsite.safariextz">
+							<img height="32px" width="32px" src="assets/pictures/safari_32.png"/>
+						</a>
+					</li>
+					<li class="inactive" title="soon">
+						<a href="#soon">
+							<img height="32px" width="32px" src="assets/pictures/edge_32.png"/>
+						</a>
+					</li>
+					<li class="inactive" title="soon">
+						<a href="#soon">
+							<img height="32px" width="32px" src="assets/pictures/opera_32.png"/>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="use">
+				<h3>Usage</h3>
+				<p>Insert library juste before <b>&lt;/body&gt;</b> end tag</p>
+				<pre>
+&lt;script src=&quot;snapsite.js&quot;&gt;&lt;/script&gt;</pre>
+				<p>Add a trigger</p>
+				<pre>
+&lt;button id=&quot;feedback&quot;&gt;Make a feedback !&lt;/button&gt;</pre>
+				<p>Initialize the library</p>
+				<pre>
+&lt;script type=&quot;text/javascript&quot;&gt;
+    SnapSite(function(data) {
+        //Do what you want..
+        //Send it to your favorite bug tracker tool
+
+        //Log screenshot as data url
+        console.log(data.snap);
+        //Browser User-Agent
+        console.log(data.platform);
+    }, {}, function(err) {
+        //Extension not ready
+    });
+&lt;/script&gt;</pre>
+			</div>
+
+			<div class="options">
+				<h3>Library</h3>
+				<p>Signatures</p>
+				<pre>
+SnapSite(callback)
+SnapSite(callback, options)
+SnapSite(callback, options, error)</pre>
+				<p>Options</p>
+				<p style="padding-left:15px">- <b>selector</b>: change the default trigger #id <b>(default: feedback)</b></p>
+				<pre>
+{selector: "capture"}</pre>
+				<p style="padding-left:15px">- <b>withExtension</b>: show trigger only if extension is available <b>(default: false)</b></p>
+				<pre>
+{withExtension: false}</pre>
+			</div>
+
+			<div class="flow">
+				<h3>Flow</h3>
+				<p>To get a smoothest flow for users without extension.<br> You can make a redirection to this url : http://snapsite.live/install<b>?r=yourwebsite.com</b><br> Users will be redirected to specified website after extension installation.</p>
+			</div>
+
+			<div class="try hide">
+				<h3>Try it</h3>
+			</div>
+
+			<div class="contribute">
+				<h3>Contribute</h3>
+				<p>This library is open source</p>
+				<a href="https://github.com/flysteur-dev/snapsite">https://github.com/flysteur-dev/snapsite</a>
+			</div>
+		</div>
+	</body>
+</html>

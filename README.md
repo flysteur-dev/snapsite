@@ -19,7 +19,7 @@ Useful to add a bug tracking tool inside your webpage during your internal devel
 ### Stores:
 - Chrome  : [link](https://chrome.google.com/webstore/detail/snapsite/fkockbmpmgpelkjfnelaifdniigigmkp)
 - Firefox : [link](https://addons.mozilla.org/fr/firefox/addon/snapsite/)
-- Safari  : (packaged binary) [link](http://snapsite.live/download/safari/snapsite.safariextz#0.1)
+- Safari  : (packaged binary) [link](https://snapsite.live/build/safari/snapsite.safariextz#0.1)
 
 ### Example:
  - Start server

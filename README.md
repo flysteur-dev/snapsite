@@ -1,4 +1,4 @@
-# SnapSite ([website](http://snapsite.live/))
+# SnapSite ([website](https://flysteur-dev.github.io/snapsite/))
 
 This extension / library provide a bridge between webpage and browser extension, to capture the current webpage.
 
@@ -19,7 +19,7 @@ Useful to add a bug tracking tool inside your webpage during your internal devel
 ### Stores:
 - Chrome  : [link](https://chrome.google.com/webstore/detail/snapsite/fkockbmpmgpelkjfnelaifdniigigmkp)
 - Firefox : [link](https://addons.mozilla.org/fr/firefox/addon/snapsite/)
-- Safari  : (packaged binary) [link](https://snapsite.live/build/safari/snapsite.safariextz#0.1)
+- Safari  : (packaged binary) [link](https://flysteur-dev.github.io/snapsite/build/safari/snapsite.safariextz#0.1)
 
 ### Example:
  - Start server
@@ -30,5 +30,5 @@ Useful to add a bug tracking tool inside your webpage during your internal devel
     - python -m SimpleHTTPServer 8180
 
 ### Documentation:
-http://snapsite.live
+https://flysteur-dev.github.io/snapsite/
 
